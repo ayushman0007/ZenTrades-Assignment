@@ -1,0 +1,59 @@
+DEMO CALL TRANSCRIPT
+Account ID: ACC-005
+Company: ShieldPest Control Group
+Date: 2024-11-22
+Duration: 25 minutes
+Participants: Sales Rep (Clara), Prospect (Derek Owens, VP of Operations)
+
+---
+
+Clara: Hi Derek, thanks for joining. Let's talk about how Clara AI can support ShieldPest. Start with an overview?
+
+Derek: Sure. ShieldPest Control Group, headquartered in Houston, Texas. We do residential and commercial pest control — general pest, termite, rodent, mosquito, and bed bug treatments. We have 22 technicians across 3 service zones in the greater Houston metro.
+
+Clara: And your business hours?
+
+Derek: Monday through Saturday, 7 AM to 7 PM Central Time. We actually do take calls Sundays but only for scheduling — no services on Sunday.
+
+Clara: Office address?
+
+Derek: 1800 Blalock Road, Houston, Texas, 77080.
+
+Clara: What qualifies as an emergency for pest control?
+
+Derek: We get asked this a lot. Honestly our emergencies are narrow — active bee or wasp swarm inside an occupied structure, that's number one. Confirmed aggressive rodent infestation in a food service facility — like a restaurant gets shut down risk, that's an emergency. And bed bug discovery in a hotel property we service — those accounts have rapid response SLAs written into contracts.
+
+Clara: After-hours emergency routing?
+
+Derek: We have a zone-based dispatch system. Houston North zone emergencies go to Ray Castillo, 713-555-0213. Houston South zone goes to Diane Webb, 713-555-0229. Houston Central — that's downtown and midtown — goes to Marcus Hill, 713-555-0245. The agent needs to ask the caller's address or zip code to route to the right zone.
+
+Clara: What if the tech doesn't answer?
+
+Derek: If the zone tech doesn't answer in 90 seconds, try our main emergency backup line, 713-555-0200. That always has a live person between 6 PM and midnight. After midnight until 6 AM, if no one picks up on backup, tell the caller we'll call back within 45 minutes and text my personal line — I'm Derek — 713-555-0250.
+
+Clara: Non-emergency after-hours?
+
+Derek: Tell them hours, take name, number, and service type they're interested in. We follow up next business day.
+
+Clara: Business hours routing?
+
+Derek: Transfer to main office, 713-555-0100. We have 4 CSRs. If all are busy, hold queue — we handle it. If it's specifically about a commercial account, transfer to our commercial team line, 713-555-0108.
+
+Clara: Any software constraints?
+
+Derek: We use FieldRoutes for scheduling. No AI touching FieldRoutes. Also — we are NOT to discuss chemical formulations or active ingredients on calls. Customers sometimes ask "what spray do you use" — agent should say that information is available in our product documentation and the office can provide material safety data sheets if needed.
+
+Clara: Smart. What greeting?
+
+Derek: "Thank you for calling ShieldPest Control Group. How can we protect your home or business today?" That's our tagline.
+
+Clara: Any other hard constraints?
+
+Derek: Don't confirm or deny whether we service a specific address on the call — sometimes customers try to test coverage. Have them call or email for a service area check. And never say we "guarantee" elimination — that word has warranty implications.
+
+Clara: Noted. Very thorough, Derek. This gives us everything we need for a strong v1.
+
+Derek: Perfect. Looking forward to reviewing it.
+
+---
+END OF TRANSCRIPT

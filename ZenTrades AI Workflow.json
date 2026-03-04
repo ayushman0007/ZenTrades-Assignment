@@ -1,0 +1,453 @@
+{
+  "name": "ZenTrades AI",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -64,
+        -336
+      ],
+      "id": "78d3350d-c0f3-4074-a5f1-63b43c1bd1db",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "fileSelector": "/data/inputs/demo/*.txt",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        -64,
+        -560
+      ],
+      "id": "04d386b4-a7ec-4e29-8146-a998ce758fe9",
+      "name": "Read/Write Files from Disk"
+    },
+    {
+      "parameters": {
+        "jsCode": "const returnItems = [];\nconst items = $input.all();\n\n// Loop through every file n8n found\nfor (let i = 0; i < items.length; i++) {\n  const item = items[i];\n  \n  // 1. Get the filename\n  const fileName = item.binary.data.fileName;\n  \n  // 2. Clean it up to create the account_id\n  const accountId = fileName.replace('demo_', '').replace('.txt', '').trim();\n  \n  // 3. Extract the text content from the binary file \n  const binaryData = await this.helpers.getBinaryDataBuffer(i, 'data');\n  const transcriptText = binaryData.toString('utf8');\n  \n  // 4. Push it to the JSON output for the next node (Groq)\n  returnItems.push({\n    json: {\n      account_id: accountId,\n      transcript: transcriptText\n    }\n  });\n}\n\nreturn returnItems;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        160,
+        -560
+      ],
+      "id": "c7862cb7-c8f3-4eeb-b4ce-1747b1922dc0",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.groq.com/openai/v1/chat/completions",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"llama-3.3-70b-versatile\",\n  \"response_format\": {\n    \"type\": \"json_object\"\n  },\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"You are an AI data extractor. Read the provided demo call transcript and output a strictly formatted JSON object representing the Account Memo. Do not hallucinate; if a detail is missing, leave it blank or place it in questions_or_unknowns. You must include these exact keys : account_id (use the provided ID), company_name, business_hours (days, start, end, timezone), office_address, services_supported (list), emergency_definition (list of triggers), emergency_routing_rules, non_emergency_routing_rules, call_transfer_rules, integration_constraints, after_hours_flow_summary, office_hours_flow_summary, questions_or_unknowns, and notes. Return ONLY valid JSON.\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": {{ JSON.stringify($json.transcript) }}\n    }\n  ]\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        384,
+        -560
+      ],
+      "id": "af88532f-8a5d-4e05-8704-79844ac6474f",
+      "name": "HTTP Request",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "cwPReFDA1VV9dJJp",
+          "name": "Header Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.groq.com/openai/v1/chat/completions",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"llama-3.3-70b-versatile\",\n  \"response_format\": { \"type\": \"json_object\" },\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"Role: Retell AI Config Architect.\\nTask: Convert Account Memo JSON into a high-fidelity Agent Spec JSON.\\n\\nRules:\\n1. The `system_prompt` must be a MASTER SCRIPT. Do not summarize; write the actual dialogue (e.g., 'Say: ...').\\n2. Include a 'CONSTRAINTS' section: Mention the price-quoting and ServiceTitan rules from the memo.\\n3. Detailed Emergency: List the specific temperature triggers and the exact technician names/numbers for the on-call rotation.\\n\\nRequired JSON Structure:\\n{\\n  \\\"version\\\": \\\"v1\\\",\\n  \\\"agent_name\\\": \\\"[Company Name] Voice Assistant\\\",\\n  \\\"voice_style\\\": \\\"Professional, warm, and clear\\\",\\n  \\\"system_prompt\\\": \\\"## GREETING\\\\nSay: [Greeting]\\\\n\\\\n## TRIAGE\\\\nAsk for name/number...\\\\n\\\\n## EMERGENCY RULES\\\\nIf [Triggers] then...\\\\n\\\\n## CONSTRAINTS\\\\n- Never quote prices...\\\",\\n  \\\"key_variables\\\": [\\\"account_id\\\", \\\"company_name\\\"],\\n  \\\"tool_invocation_placeholders\\\": [],\\n  \\\"call_transfer_protocol\\\": \\\"Exact numbers and wait times\\\",\\n  \\\"fallback_protocol\\\": \\\"Instructions for failed transfers\\\"\\n}\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": {{ JSON.stringify(JSON.stringify($json.full_response)) }}\n    }\n  ]\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1056,
+        -560
+      ],
+      "id": "6d2ba299-5fcf-45f6-a863-807b6c9e61e3",
+      "name": "HTTP Request1",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "cwPReFDA1VV9dJJp",
+          "name": "Header Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "fileName": "={{ '/data/outputs/accounts/' + $json.account_id + '_memo_v1.json' }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        832,
+        -560
+      ],
+      "id": "36477904-6ef4-4691-b51b-2ee7e387f634",
+      "name": "Read/Write Files from Disk1"
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "fileName": "={{ '/data/outputs/agent_spec/' + $json.account_id + '_agent_spec_v1.json' }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        1504,
+        -560
+      ],
+      "id": "22406fd3-8654-4621-8c7d-fd169b7ca7e7",
+      "name": "Read/Write Files from Disk2"
+    },
+    {
+      "parameters": {
+        "jsCode": "const returnItems = [];\n\nfor (const item of $input.all()) {\n  // 1. Extract the text response from Groq\n  const contentString = item.json.choices[0].message.content;\n  \n  // 2. Parse the text into a readable JSON object\n  const parsedMemo = JSON.parse(contentString);\n  \n  // 3. Convert that object into a binary file for the Write node\n  const buffer = Buffer.from(JSON.stringify(parsedMemo, null, 2));\n  const binaryData = await this.helpers.prepareBinaryData(buffer, 'memo.json', 'application/json');\n  \n  // 4. Send the cleaned data and the binary file to the next node\n  returnItems.push({\n    json: {\n      account_id: parsedMemo.account_id, // We extract this specifically for your folder path!\n      full_response: parsedMemo\n    },\n    binary: {\n      data: binaryData // This matches the \"Input Binary Field\" in your Write node\n    }\n  });\n}\n\nreturn returnItems;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        608,
+        -560
+      ],
+      "id": "0c3f21db-d8de-48d1-9337-e7638a209c39",
+      "name": "Code in JavaScript"
+    },
+    {
+      "parameters": {
+        "jsCode": "const returnItems = [];\nlet i = 0; // We add a counter to track which file we are on\n\nfor (const item of $input.all()) {\n  const contentString = item.json.choices[0].message.content;\n  const parsedSpec = JSON.parse(contentString);\n  \n  const buffer = Buffer.from(JSON.stringify(parsedSpec, null, 2));\n  const binaryData = await this.helpers.prepareBinaryData(buffer, 'agent_spec.json', 'application/json');\n  \n  // Here is the magic fix: We use [i] instead of .first() so it matches them up 1-to-1!\n  // Note: Change 'Code' to the exact name of your first code node if it is different.\n  const accountId = $('Code').all()[i].json.account_id || \"ACC-UNKNOWN\"; \n  \n  returnItems.push({\n    json: {\n      account_id: accountId\n    },\n    binary: {\n      data: binaryData\n    }\n  });\n  \n  i++; // Move to the next item\n}\n\nreturn returnItems;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1280,
+        -560
+      ],
+      "id": "a9556e8e-9a64-4128-815d-270782cc7e31",
+      "name": "Code in JavaScript1"
+    },
+    {
+      "parameters": {
+        "fileSelector": "/data/inputs/onboarding/*.txt",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1.1,
+      "position": [
+        160,
+        -336
+      ],
+      "id": "57c8ed3c-a932-4fa4-8f3c-c56290defd36",
+      "name": "Read/Write Files from Disk3"
+    },
+    {
+      "parameters": {
+        "jsCode": "const returnItems = [];\n\nfor (const item of $input.all()) {\n  if (item.binary && item.binary.data) {\n    // Grabs \"onboarding_001_arctic_hvac.txt\"\n    const fileName = item.binary.data.fileName; \n    \n    // Splits the name by '_'\n    const parts = fileName.split('_'); \n    \n    if (parts.length > 1) {\n      // Grabs the \"001\" and makes \"ACC-001\"\n      const accountId = \"ACC-\" + parts[1]; \n      \n      returnItems.push({\n        json: {\n          account_id: accountId \n        },\n        binary: {\n          data: item.binary.data // Keeps the file attached!\n        }\n      });\n    }\n  }\n}\n\nreturn returnItems;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        384,
+        -336
+      ],
+      "id": "8390661b-9bba-496a-98f8-cb98f7de79eb",
+      "name": "Code in JavaScript2"
+    },
+    {
+      "parameters": {
+        "operation": "text",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1.1,
+      "position": [
+        608,
+        -336
+      ],
+      "id": "b194ea11-6762-4912-a212-101e67f91182",
+      "name": "Extract from File"
+    },
+    {
+      "parameters": {
+        "fileSelector": "={{ '/data/outputs/accounts/' + $('Code in JavaScript2').item.json.account_id + '_memo_v1.json' }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1.1,
+      "position": [
+        832,
+        -336
+      ],
+      "id": "79efb26c-4523-4bce-b6e8-2dd20e71e9db",
+      "name": "Read/Write Files from Disk4"
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\n\nfor (let i = 0; i < items.length; i++) {\n  if (items[i].binary && items[i].binary.data) {\n    try {\n      // 1. Safely ask n8n's backend to fetch the raw file buffer\n      const buffer = await this.helpers.getBinaryDataBuffer(i, 'data');\n      \n      // 2. Convert that safe buffer into readable text\n      let jsonString = buffer.toString('utf-8');\n      \n      // 3. Clean up invisible characters (like BOM) and any AI markdown (```json)\n      jsonString = jsonString.replace(/^\\uFEFF/, ''); \n      jsonString = jsonString.replace(/```json/g, \"\").replace(/```/g, \"\").trim();\n      \n      // 4. Parse the completely clean string into a JSON object\n      items[i].json.old_memo_json = JSON.parse(jsonString);\n      \n    } catch (error) {\n      // If it still fails, this will output exactly what the text looked like so we can see what's breaking it!\n      items[i].json.parse_error = error.message;\n      items[i].json.failed_string = (await this.helpers.getBinaryDataBuffer(i, 'data')).toString('utf-8');\n    }\n  }\n}\n\nreturn items;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1056,
+        -336
+      ],
+      "id": "50491a49-31ff-4b4f-aa60-da5324c3c0ef",
+      "name": "Code in JavaScript3"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.groq.com/openai/v1/chat/completions",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"llama-3.3-70b-versatile\",\n  \"response_format\": {\n    \"type\": \"json_object\"\n  },\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"Role: AI Configuration Auditor.\\nTask: Compare an existing Account Memo JSON against a new Onboarding Transcript.\\n\\nRules:\\n1. Read the transcript to identify any changes (e.g., deleted technicians, new hours, new emergency rules).\\n2. Apply these updates to the existing Memo JSON.\\n3. CRITICAL: If a piece of data is NOT mentioned in the transcript (like the company address or constraints), KEEP the original data exactly as it was. Do not delete existing valid information.\\n4. Change the 'version' key to 'v2'.\\n5. Output ONLY valid JSON matching the exact structure of the original memo.\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": {{ JSON.stringify(JSON.stringify(\"OLD MEMO: \" + JSON.stringify($json.old_memo_json) + \"\\n\\nNEW TRANSCRIPT: \" + $('Extract from File').item.json.data)) }}\n    }\n  ]\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1280,
+        -336
+      ],
+      "id": "b746b982-27b7-47b3-87ca-c38b9fa5fd03",
+      "name": "HTTP Request2",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "cwPReFDA1VV9dJJp",
+          "name": "Header Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\n\nfor (let i = 0; i < items.length; i++) {\n  // 1. Grab the AI's updated JSON string\n  const aiResponse = items[i].json.choices[0].message.content;\n  \n  // 2. Parse it and re-stringify it with 2 spaces so it looks pretty and readable\n  const updatedMemo = JSON.parse(aiResponse);\n  const formattedJson = JSON.stringify(updatedMemo, null, 2);\n  \n  // 3. Look back to your earlier code node to grab the correct Account ID for this specific file\n  const accountId = $('Code in JavaScript2').all()[i].json.account_id; \n  \n  // 4. Convert it into a binary file\n  const buffer = Buffer.from(formattedJson, 'utf-8');\n  \n  // 5. Attach the new file to the output under the name 'data'\n  items[i].binary = {\n    data: await this.helpers.prepareBinaryData(buffer, accountId + '_memo_v2.json', 'application/json')\n  };\n  \n  // Clean up the JSON output so the next node can easily read the ID\n  items[i].json = { \n    account_id: accountId, \n    message: \"V2 File Successfully Generated!\" \n  };\n}\n\nreturn items;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1504,
+        -336
+      ],
+      "id": "fbbea87c-c764-4c72-aad8-ee1abf533083",
+      "name": "Code in JavaScript4"
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "fileName": "={{ '/data/outputs/accounts/' + $json.account_id + '_memo_v2.json' }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1.1,
+      "position": [
+        1728,
+        -336
+      ],
+      "id": "ed69797a-f1e7-42d2-aeb2-c00e4f6d9725",
+      "name": "Read/Write Files from Disk5"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Read/Write Files from Disk3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read/Write Files from Disk": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request1": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read/Write Files from Disk1": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "Read/Write Files from Disk1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript1": {
+      "main": [
+        [
+          {
+            "node": "Read/Write Files from Disk2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read/Write Files from Disk3": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript2": {
+      "main": [
+        [
+          {
+            "node": "Extract from File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from File": {
+      "main": [
+        [
+          {
+            "node": "Read/Write Files from Disk4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read/Write Files from Disk4": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript3": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request2": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript4": {
+      "main": [
+        [
+          {
+            "node": "Read/Write Files from Disk5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "3942d336-c665-4c98-9fa1-fc158feac945",
+  "meta": {
+    "instanceId": "f7f8ece83d5a28a652bc0a53ba9d2692815a8d0dc52383fcf202b2d4bc222a53"
+  },
+  "id": "dEEft9sx8tdtu4xs",
+  "tags": []
+}

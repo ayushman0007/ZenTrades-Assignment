@@ -1,0 +1,38 @@
+{
+  "account_id": "ACC-004",
+  "company_name": "Volt Masters Electrical Contractors",
+  "business_hours": {
+    "days": "Monday through Friday",
+    "start": "8:00 AM",
+    "end": "5:00 PM",
+    "timezone": "Eastern Time"
+  },
+  "office_address": "5504 Monroe Road, Charlotte, North Carolina, 28212",
+  "services_supported": [
+    "Residential electrical",
+    "Commercial electrical",
+    "Panel upgrades",
+    "EV charger installs",
+    "Generator hookups",
+    "Repairs"
+  ],
+  "emergency_definition": [
+    "Power outage affecting medical equipment in a home",
+    "Exposed live wiring",
+    "Burning smell from an electrical panel",
+    "Complete power loss to a business"
+  ],
+  "emergency_routing_rules": "Call Linda Park at 704-555-0167, then Aaron Brooks at 704-555-0182 if no answer, then instruct caller to check with their utility company and leave a message for a callback within the hour",
+  "non_emergency_routing_rules": "Inform caller of business hours and take their name and number for a callback the next business day",
+  "call_transfer_rules": "Transfer calls directly to Linda Park's cell at 704-555-0167 during business hours, or collect information and note email follow-up is needed if the caller inquires about scheduling",
+  "integration_constraints": "Do not create jobs in Housecall Pro, and do not handle email",
+  "after_hours_flow_summary": "Check for emergency, route to Linda or Aaron, or take a message for non-emergencies",
+  "office_hours_flow_summary": "Transfer calls to Linda's cell or collect information for scheduling inquiries",
+  "questions_or_unknowns": [],
+  "notes": [
+    "Use the greeting: 'Thanks for calling Volt Masters Electrical! How can we help power you up today?'",
+    "Never quote a price",
+    "In live wire situations, instruct the caller to ensure they are in a safe location before connecting them with a technician",
+    "Inform customers that Volt Masters handles all permits for big jobs like panel upgrades"
+  ]
+}

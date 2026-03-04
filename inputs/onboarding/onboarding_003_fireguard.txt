@@ -1,0 +1,45 @@
+ONBOARDING CALL TRANSCRIPT
+Account ID: ACC-003
+Company: FireGuard Protection Services
+Date: 2024-12-09
+Duration: 20 minutes
+Participants: Onboarding Specialist (Clara), Client (Pam Rios, Office Admin)
+
+---
+
+Onboarding Specialist: Hi Pam! Steve couldn't join today?
+
+Pam: He's on a job site, but I have authority to confirm everything. He reviewed the v1 draft last night and gave me a list.
+
+Onboarding Specialist: Perfect. Let's go through it.
+
+Pam: First — Rick Navarro's number changed. His new cell is 602-555-0166. Same role, secondary on-call after emergency dispatch.
+
+Onboarding Specialist: Updated. Rick Navarro, secondary on-call, 602-555-0166.
+
+Pam: Second — we have a new emergency category. If a caller says they've received an "Authority Having Jurisdiction violation notice" — that means a fire marshal gave them a written violation — that's now treated as an emergency, not a regular call. Steve wants those escalated immediately to Rick, not just the dispatch line.
+
+Onboarding Specialist: Got it. New emergency trigger: "AHJ violation notice received." Routing: skip dispatch, go directly to Rick Navarro at 602-555-0166.
+
+Pam: Exactly. Third — we're expanding services. We now offer kitchen hood suppression system installation and service. Add that please.
+
+Onboarding Specialist: Added. Kitchen hood suppression systems, installation and service.
+
+Pam: Fourth — business hours are changing slightly. Starting January 1st, we're extending to 6 PM on Fridays only. So Monday through Thursday 7 AM to 5 PM, Friday 7 AM to 6 PM. Still Mountain Standard Time.
+
+Onboarding Specialist: Updated. Mon–Thu 7–5, Fri 7–6, MST.
+
+Pam: Fifth — and this is a new constraint — we got a cease-and-desist from a competitor last year about our agents mentioning "code compliance guaranteed." Steve says the agent must never use the word "guaranteed" or "guarantee" in any context. Please flag that hard.
+
+Onboarding Specialist: Hard constraint noted: agent must never say "guaranteed" or "guarantee" in any form.
+
+Pam: And last — the greeting. Steve wants it updated to: "Thank you for calling FireGuard Protection Services, your commercial fire protection specialists. For fire or sprinkler emergencies, please stay on the line. For all other inquiries, how may I direct your call?" He thinks "how can we help you" sounds too casual for commercial clients.
+
+Onboarding Specialist: Updated greeting. Noted. Let me read back: Rick's number updated; AHJ violation added as emergency with direct Rick routing; kitchen hood suppression added to services; hours extended to 6 PM on Fridays; "guarantee" forbidden language; updated greeting. Is that everything?
+
+Pam: That is everything. You guys are thorough!
+
+Onboarding Specialist: That's the job! V2 will be ready in 48 hours.
+
+---
+END OF TRANSCRIPT

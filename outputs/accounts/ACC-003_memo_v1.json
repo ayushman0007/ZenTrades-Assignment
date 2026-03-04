@@ -1,0 +1,52 @@
+{
+  "account_id": "ACC-003",
+  "company_name": "FireGuard Protection Services",
+  "business_hours": {
+    "days": "Monday through Friday",
+    "start": "7 AM",
+    "end": "5 PM",
+    "timezone": "Mountain Standard Time"
+  },
+  "office_address": "9240 West Roosevelt Street, Tolleson, Arizona, 85353",
+  "services_supported": [
+    "fire sprinkler installation",
+    "inspection",
+    "emergency repair",
+    "fire alarm testing"
+  ],
+  "emergency_definition": [
+    "active sprinkler discharge",
+    "fire alarm system fully offline",
+    "imminent deadline for non-compliant building"
+  ],
+  "emergency_routing_rules": [
+    "call emergency dispatch line 602-555-0177",
+    "if no answer, escalate to on-call supervisor Rick Navarro at 602-555-0144",
+    "if still no answer, log the call and promise callback in under 30 minutes"
+  ],
+  "non_emergency_routing_rules": [
+    "collect name, number, company name, and nature of the call",
+    "read back to them that someone will contact them next business day"
+  ],
+  "call_transfer_rules": [
+    "during business hours, transfer to main line 623-555-0100",
+    "if main line is not answered, go to voicemail"
+  ],
+  "integration_constraints": [
+    "do not interact with ServiceTrade",
+    "do not discuss pricing",
+    "do not mention competitor names",
+    "do not comment on system status",
+    "forward permit status inquiries to Pam"
+  ],
+  "after_hours_flow_summary": "collect caller information and promise callback next business day for non-emergencies, route emergencies to dispatch line",
+  "office_hours_flow_summary": "answer calls, transfer to main line if necessary, and take messages if no one is available",
+  "questions_or_unknowns": [
+    "no detailed information on how to handle multiple simultaneous emergency calls",
+    "no information on holiday hours or special exception handling"
+  ],
+  "notes": [
+    "priority flag for property managers",
+    "use specific greeting to surface emergency option"
+  ]
+}

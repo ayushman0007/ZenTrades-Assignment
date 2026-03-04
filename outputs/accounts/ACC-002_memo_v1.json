@@ -1,0 +1,80 @@
+{
+  "account_id": "ACC-002",
+  "company_name": "Riverstone Plumbing & Drain",
+  "business_hours": {
+    "days": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+    ],
+    "start": "8:00 AM",
+    "end": "5:00 PM",
+    "timezone": "Eastern Time"
+  },
+  "office_address": "317 Peachtree Industrial Boulevard, Suite 12, Buford, Georgia, 30518",
+  "services_supported": [
+    "drain cleaning",
+    "pipe repair",
+    "water heater installs",
+    "emergency leak response"
+  ],
+  "emergency_definition": [
+    "active water leak causing property damage",
+    "sewage backup in the home",
+    "burst pipes",
+    "no hot water for elderly or disabled customers"
+  ],
+  "emergency_routing_rules": {
+    "after_hours": {
+      "initial_contact": "single emergency line (678-555-0234)",
+      "callback_rules": {
+        "time_to_callback": "20 minutes",
+        "required_info": [
+          "name",
+          "callback number",
+          "address"
+        ]
+      },
+      "escalation": {
+        "time_to_escalate": "20 minutes",
+        "contact": "Gary Tran (678-555-0289)",
+        "instruction": "Do not give Gary's number directly to callers"
+      }
+    }
+  },
+  "non_emergency_routing_rules": {
+    "after_hours": {
+      "action": "offer to schedule a callback for the next business day",
+      "required_info": [
+        "name",
+        "number"
+      ]
+    }
+  },
+  "call_transfer_rules": {
+    "business_hours": {
+      "initial_contact": "office line (770-555-0190)",
+      "fallback": "scheduling voicemail",
+      "check_frequency": "every hour"
+    }
+  },
+  "integration_constraints": {
+    "software": "Jobber",
+    "agent_permissions": {
+      "create_modify_jobs": "never"
+    }
+  },
+  "after_hours_flow_summary": "Route emergencies to emergency line, non-emergencies offered callback for next business day",
+  "office_hours_flow_summary": "Transfer calls to office line, falls back to scheduling voicemail if not answered",
+  "questions_or_unknowns": [
+    "Full Spanish support not requested but agent should be able to say 'Un momento, voy a conectarte con alguien que puede ayudarte' and transfer or leave a note"
+  ],
+  "notes": [
+    "Never promise pricing",
+    "Never say 'we'll be there in X hours'",
+    "Do not use superlative marketing claims (e.g., 'the best in Atlanta')",
+    "Preferred greeting: 'Thank you for calling Riverstone Plumbing, your Atlanta plumbing experts. How can we help you today?'"
+  ]
+}

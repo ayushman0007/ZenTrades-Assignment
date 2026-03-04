@@ -1,0 +1,63 @@
+DEMO CALL TRANSCRIPT
+Account ID: ACC-004
+Company: Volt Masters Electrical Contractors
+Date: 2024-11-20
+Duration: 19 minutes
+Participants: Sales Rep (Clara), Prospect (Linda Park, Owner)
+
+---
+
+Clara: Hi Linda, great to meet you. Tell me about Volt Masters.
+
+Linda: Hi! So we're Volt Masters Electrical Contractors, based in Charlotte, North Carolina. Residential and commercial electrical — panel upgrades, EV charger installs, generator hookups, repairs. We have 6 electricians. Small but tight team.
+
+Clara: What are your business hours?
+
+Linda: Monday through Friday, 8 AM to 5 PM. We are closed weekends. Eastern Time.
+
+Clara: Office address?
+
+Linda: 5504 Monroe Road, Charlotte, North Carolina, 28212.
+
+Clara: What are your emergency triggers — what makes an after-hours call an emergency?
+
+Linda: Power outage affecting medical equipment in a home — we get those, it's serious. Exposed live wiring, that's always an emergency. Burning smell from an electrical panel. And complete power loss to a business, because they can't operate.
+
+Clara: Emergency routing after hours?
+
+Linda: Call me first — Linda Park — 704-555-0167. Give me 2 minutes. If I don't answer, call my lead tech, Aaron Brooks, at 704-555-0182. If neither of us answer, tell the caller to check in with their utility company first if it might be a grid issue, leave their name and number, and we will call back within the hour.
+
+Clara: Non-emergency after-hours?
+
+Linda: Tell them our hours, take their name and number, we'll call next business day. Simple.
+
+Clara: Business hours routing?
+
+Linda: Transfer directly to my cell, 704-555-0167. Or if it's about scheduling a new job, they can also reach our scheduling email — but the AI shouldn't handle email, right? Just take info and I'll follow up.
+
+Clara: Correct, the agent handles calls. We'll have it collect info and note that email follow-up is needed if they specifically ask about scheduling.
+
+Linda: Perfect.
+
+Clara: Any software constraints?
+
+Linda: We use Housecall Pro. Same thing I've heard from others — don't let the AI create jobs in it. I'll do that myself.
+
+Clara: What greeting?
+
+Linda: "Thanks for calling Volt Masters Electrical! How can we help power you up today?" — a little fun, you know?
+
+Clara: Love it. Any hard constraints — things the agent must never say?
+
+Linda: Never quote a price. Don't say "that sounds dangerous, you should call 911" even if it IS a live wire situation — I want our agent to say "please ensure you are in a safe location, then we will connect you with a technician immediately." We want to help them, not panic them.
+
+Clara: Understood. That's a nuanced but important distinction.
+
+Linda: Exactly. One more thing — sometimes customers ask about permits for big jobs like panel upgrades. Tell them we handle all permits on our end, and our office will confirm details during scheduling.
+
+Clara: Perfect. I think we're all set, Linda.
+
+Linda: Great, can't wait to see what you put together!
+
+---
+END OF TRANSCRIPT

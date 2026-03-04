@@ -1,0 +1,47 @@
+ONBOARDING CALL TRANSCRIPT
+Account ID: ACC-004
+Company: Volt Masters Electrical Contractors
+Date: 2024-12-10
+Duration: 14 minutes
+Participants: Onboarding Specialist (Clara), Client (Linda Park, Owner)
+
+---
+
+Onboarding Specialist: Hey Linda! Ready to lock in your onboarding details?
+
+Linda: Yes! I reviewed the v1 draft and it's pretty close. Just a few tweaks.
+
+Onboarding Specialist: Let's hear them.
+
+Linda: So first, Aaron Brooks — my lead tech — he's now co-owner. His role changed but his number is the same: 704-555-0182. I just want his title updated if that appears anywhere.
+
+Onboarding Specialist: Updated. Aaron Brooks, co-owner, secondary on-call. Same number.
+
+Linda: Second — I'm adding Saturday hours. We're doing 9 AM to 1 PM on Saturdays now, Eastern Time. More demand than we expected. So Monday through Friday 8 to 5, Saturday 9 to 1.
+
+Onboarding Specialist: Updated. Monday–Friday 8–5, Saturday 9–1 ET.
+
+Linda: Third — and this is important — we just landed a contract with a property management company, Greenfield Properties. Their calls should be treated as priority. If any caller says they're calling from Greenfield Properties, transfer them to my direct cell immediately, even during business hours, skipping the main line.
+
+Onboarding Specialist: Noted. New VIP routing rule: callers identifying as Greenfield Properties → immediate transfer to Linda Park at 704-555-0167, bypassing standard queue.
+
+Linda: Exactly. Fourth — we added solar panel electrical hookups to our services. Big deal for us. And we now also do backup battery system installation — like Tesla Powerwall and similar.
+
+Onboarding Specialist: Added services: solar panel electrical hookups, backup battery system installation.
+
+Linda: Fifth — emergency routing update. Instead of calling me first, I want to swap the order. Call Aaron first at 704-555-0182, then me at 704-555-0167. I've been getting woken up too much and Aaron handles nights better. Don't tell customers this — just route it.
+
+Onboarding Specialist: Understood. Updated emergency routing: primary is Aaron Brooks 704-555-0182, secondary is Linda Park 704-555-0167.
+
+Linda: Perfect. I think that's it. Oh — one small thing. Can the greeting say "Volt Masters" instead of "Volt Masters Electrical"? We dropped the "Electrical" from our DBA — just goes by Volt Masters now.
+
+Onboarding Specialist: Updated greeting: "Thanks for calling Volt Masters! How can we help power you up today?"
+
+Linda: That's it! So happy with how this is going.
+
+Onboarding Specialist: Great. Recap: Aaron's title updated to co-owner; Saturday hours added; Greenfield Properties VIP routing; solar and battery services added; emergency routing swapped Aaron first then Linda; greeting updated to "Volt Masters." All correct?
+
+Linda: All correct!
+
+---
+END OF TRANSCRIPT

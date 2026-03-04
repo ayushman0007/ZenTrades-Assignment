@@ -1,0 +1,64 @@
+{
+  "account_id": "ACC-005",
+  "company_name": "ShieldPest Control Group",
+  "business_hours": {
+    "days": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+    ],
+    "start": "7:00 AM",
+    "end": "7:00 PM",
+    "timezone": "Central Time"
+  },
+  "office_address": "1800 Blalock Road, Houston, Texas, 77080",
+  "services_supported": [
+    "residential pest control",
+    "commercial pest control",
+    "general pest",
+    "termite",
+    "rodent",
+    "mosquito",
+    "bed bug treatments",
+    "wildlife removal"
+  ],
+  "emergency_definition": [
+    "active bee or wasp swarm inside an occupied structure",
+    "confirmed aggressive rodent infestation in a food service facility",
+    "bed bug discovery in a hotel property",
+    "active rodent activity in hospital or elder care facility"
+  ],
+  "emergency_routing_rules": {
+    "Houston North zone": "Marcus Hill, 713-555-0213",
+    "Houston South and Central zones": {
+      "primary": "Ray Castillo, 713-555-0229",
+      "backup": "Elena Cruz, 713-555-0261"
+    },
+    "hospital or elder care facility emergency": "Marcus Hill, 713-555-0213",
+    "backup_line": "713-555-0200",
+    "after_midnight_protocol": "call back within 45 minutes and text Derek's personal line, 713-555-0250"
+  },
+  "non_emergency_routing_rules": "take name, number, and service type, follow up next business day",
+  "call_transfer_rules": {
+    "main_office": "713-555-0100",
+    "commercial_team": "713-555-0108"
+  },
+  "integration_constraints": [
+    "no AI integration with ServiceTitan",
+    "do not discuss chemical formulations or active ingredients on calls"
+  ],
+  "after_hours_flow_summary": "route emergencies to zone-based dispatch or Marcus Hill for hospital/elder care emergencies, non-emergencies to next business day follow-up",
+  "office_hours_flow_summary": "transfer to main office or commercial team line",
+  "questions_or_unknowns": [
+    "no clear definition of 'rapid response SLAs' for hotel properties",
+    "no clarification on how to handle multiple emergencies at once"
+  ],
+  "notes": [
+    "use greeting: 'Thank you for calling ShieldPest Control Group, protecting homes and businesses across Houston. How can I help you today?'",
+    "do not confirm or deny service area coverage on calls",
+    "never use the word 'guarantee' in relation to pest elimination"
+  ],
+  "version": "v2"
+}

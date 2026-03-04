@@ -1,0 +1,63 @@
+DEMO CALL TRANSCRIPT
+Account ID: ACC-002
+Company: Riverstone Plumbing & Drain
+Date: 2024-11-14
+Duration: 22 minutes
+Participants: Sales Rep (Clara), Prospect (Maria Chen, Operations Manager)
+
+---
+
+Clara: Hi Maria, thanks for taking the time today. Let's walk through how Clara AI would work for Riverstone Plumbing. First, can you give me an overview of the business?
+
+Maria: Of course. We're Riverstone Plumbing & Drain. We serve the greater Atlanta metro area — residential and light commercial. We do drain cleaning, pipe repair, water heater installs, emergency leak response. We have 8 plumbers and 2 apprentices.
+
+Clara: And your business hours?
+
+Maria: Monday through Friday 8 AM to 5 PM, Eastern Time. We are closed weekends unless it's a scheduled job. No walk-ins obviously.
+
+Clara: And the office address?
+
+Maria: 317 Peachtree Industrial Boulevard, Suite 12, Buford, Georgia, 30518.
+
+Clara: What constitutes an emergency for your team?
+
+Maria: Active water leak causing property damage, sewage backup in the home — that's a health hazard — burst pipes, and no hot water for elderly or disabled customers counts as emergency too if they flag it.
+
+Clara: Who gets called for emergencies after hours?
+
+Maria: We have a single emergency line — it rings to whoever is on call that week. The number is 678-555-0234. If they don't pick up within two minutes, the caller should be told a technician will call them back within 20 minutes and asked to confirm their name, callback number, and address. We need all three — address is critical because sometimes people call from a neighbor's phone.
+
+Clara: What about emergencies that still can't get a callback?
+
+Maria: If the tech hasn't responded in 20 minutes, the system should also send an alert to our owner, Gary Tran. His number is 678-555-0289. Don't give callers Gary's number directly though.
+
+Clara: Understood. Non-emergency after-hours?
+
+Maria: Tell them our hours, offer to schedule a callback for the next business day. Collect name and number only. No quotes, no ETAs.
+
+Clara: During business hours, how should calls route?
+
+Maria: Transfer to our office line, 770-555-0190. We have two office staff. If no answer in 3 rings, go to our scheduling voicemail. We check it every hour during business hours.
+
+Clara: Do you use any software the agent should be aware of?
+
+Maria: We use Jobber for scheduling. Same rule — the agent should never create or modify jobs in Jobber. Just take info and route.
+
+Clara: Any specific things the agent should never say or do?
+
+Maria: Never promise pricing. Never say "we'll be there in X hours." And don't say we're "the best in Atlanta" — we had a legal letter about superlative marketing claims once, learned our lesson.
+
+Clara: What greeting would you like?
+
+Maria: "Thank you for calling Riverstone Plumbing, your Atlanta plumbing experts. How can we help you today?" Keep it warm.
+
+Clara: Any other notes?
+
+Maria: One thing — we have some Spanish-speaking customers. If someone starts speaking Spanish, I'd love the agent to say something like "Un momento, voy a conectarte con alguien que puede ayudarte" and transfer to office hours or leave a note. We're not asking for full Spanish support, just don't hang up on them.
+
+Clara: Noted — we'll flag that in the configuration. That's really helpful context.
+
+Maria: Great. Looking forward to seeing the draft.
+
+---
+END OF TRANSCRIPT

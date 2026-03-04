@@ -1,0 +1,57 @@
+ONBOARDING CALL TRANSCRIPT
+Account ID: ACC-005
+Company: ShieldPest Control Group
+Date: 2024-12-12
+Duration: 22 minutes
+Participants: Onboarding Specialist (Clara), Client (Derek Owens, VP of Operations), Client (Sandra Pham, Customer Experience Manager)
+
+---
+
+Onboarding Specialist: Hi Derek, hi Sandra! Good to have you both. Let's finalize ShieldPest's setup.
+
+Derek: Sandra is going to take the lead here — she's been running point on all things Clara since the demo.
+
+Sandra: Thanks Derek. Yes, I've got the list. A few things have changed.
+
+Onboarding Specialist: Go ahead.
+
+Sandra: First — service hours. We're now closed on Saturdays. We found the volume didn't justify staffing. So Monday through Friday only, 7 AM to 7 PM Central Time. Sundays are completely dropped too. No more Sunday scheduling calls.
+
+Onboarding Specialist: Updated. Monday–Friday 7 AM to 7 PM CT. No weekend service or calls.
+
+Sandra: Second — our zone dispatch structure changed. Marcus Hill moved to Houston North zone. Ray Castillo is now covering both South and Central zones with a new partner, Elena Cruz, at 713-555-0261. So: Houston North — Marcus Hill, 713-555-0213. Houston South and Central — first try Ray Castillo at 713-555-0229, if no answer try Elena Cruz at 713-555-0261.
+
+Onboarding Specialist: Updated zone routing. North: Marcus Hill 713-555-0213. South + Central: Ray Castillo 713-555-0229, fallback Elena Cruz 713-555-0261.
+
+Sandra: Third — we're adding a new service: wildlife removal. We've had a ton of demand for it and just got licensed. Add that to services.
+
+Onboarding Specialist: Added: wildlife removal.
+
+Sandra: Fourth — new emergency trigger. We're adding "active rodent activity in hospital or elder care facility." Those have strict health codes and we have three hospital contracts now. That's an emergency even during business hours — goes straight to Marcus Hill regardless of zone.
+
+Onboarding Specialist: New emergency trigger: "rodent activity in hospital or elder care facility." Routing: direct to Marcus Hill 713-555-0213, regardless of zone or time.
+
+Sandra: Fifth — we're removing the Sunday scheduling option entirely. Before we took Sunday calls for scheduling. Not anymore. If anyone calls on a weekend, they get a message that we're closed and calls are answered Monday through Friday.
+
+Onboarding Specialist: Updated. Weekend calls get closed message and callback info only.
+
+Derek: There's one more — the integration. We switched from FieldRoutes to ServiceTitan last month. Same constraint — agent should never touch ServiceTitan.
+
+Onboarding Specialist: Updated integration constraint: ServiceTitan (was FieldRoutes), same restriction — agent must never create or modify records.
+
+Sandra: And we want to update the greeting slightly. "Thank you for calling ShieldPest Control Group, protecting homes and businesses across Houston. How can I help you today?"
+
+Onboarding Specialist: Updated greeting. Last thing — any changes to the chemical discussion restriction?
+
+Sandra: That stays. And Derek, do you want to keep the thing about not confirming service areas on calls?
+
+Derek: Yes, keep that.
+
+Onboarding Specialist: Confirmed. Let me recap: hours reduced to Mon–Fri only; zone routing restructured with Elena Cruz added; wildlife removal added; hospital/elder care rodent emergency trigger added; Sunday calls fully closed; integration updated to ServiceTitan; greeting updated. Does that cover everything?
+
+Sandra: Perfect, that's everything.
+
+Derek: Good stuff. Thanks for being thorough.
+
+---
+END OF TRANSCRIPT

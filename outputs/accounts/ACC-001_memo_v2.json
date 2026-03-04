@@ -1,0 +1,66 @@
+{
+  "account_id": "ACC-001",
+  "company_name": "Arctic Comfort HVAC Solutions",
+  "business_hours": {
+    "days": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ],
+    "start": "7:00 AM",
+    "end": "6:00 PM",
+    "timezone": "Mountain Time",
+    "saturday_hours": {
+      "start": "8:00 AM",
+      "end": "2:00 PM"
+    }
+  },
+  "office_address": "4820 Northfield Boulevard, Denver, Colorado, 80216",
+  "services_supported": [
+    "HVAC installations",
+    "HVAC repairs",
+    "HVAC maintenance contracts",
+    "water heater replacement",
+    "commercial refrigeration maintenance (pilot program)"
+  ],
+  "emergency_definition": [
+    "No heat when it's below 30 degrees outside",
+    "No AC when it's above 95 degrees outside",
+    "Furnace actively leaking carbon monoxide",
+    "Commercial refrigeration failure",
+    "commercial boiler failure"
+  ],
+  "emergency_routing_rules": [
+    {
+      "technician": "Chris Vega",
+      "phone_number": "720-555-0166",
+      "timeout": "90 seconds"
+    },
+    {
+      "technician": "Dave Kowalski",
+      "phone_number": "720-555-0187"
+    }
+  ],
+  "non_emergency_routing_rules": "Tell caller we're closed, give business hours, ask to call back or leave name and number for callback the next business day. You can also visit us online at arcticcomfortdenver.com.",
+  "call_transfer_rules": {
+    "business_hours": "If caller is an existing maintenance contract customer, transfer to 720-555-0111 (Janet direct). Otherwise, transfer all calls to main office line: 720-555-0100",
+    "after_hours": "Do not transfer"
+  },
+  "integration_constraints": [
+    "Do not create jobs or touch ServiceTitan directly",
+    "Do not quote prices",
+    "Do not promise same-day service"
+  ],
+  "after_hours_flow_summary": "Route emergency calls to on-call technician, non-emergency calls told to call back during business hours",
+  "office_hours_flow_summary": "Transfer all calls to main office line or Janet's direct line for existing maintenance contract customers",
+  "questions_or_unknowns": [],
+  "notes": [
+    "Use ServiceTitan for field service management",
+    "Update on-call technician numbers weekly",
+    "Seasonal consideration: Winter (November to February) may require additional on-call technicians"
+  ],
+  "version": "v2"
+}

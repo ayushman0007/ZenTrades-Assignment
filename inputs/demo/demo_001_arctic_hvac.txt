@@ -1,0 +1,59 @@
+DEMO CALL TRANSCRIPT
+Account ID: ACC-001
+Company: Arctic Comfort HVAC Solutions
+Date: 2024-11-12
+Duration: 28 minutes
+Participants: Sales Rep (Clara), Prospect (Tom Hargrove, Owner)
+
+---
+
+Clara: Hi Tom, thanks for joining today. I'm excited to show you how Clara AI can handle your after-hours calls. Can you tell me a bit about your business first?
+
+Tom: Sure. We're Arctic Comfort HVAC Solutions, based out of Denver, Colorado. We do residential and commercial HVAC — installations, repairs, maintenance contracts. Been in business about 14 years. We've got 12 technicians on staff.
+
+Clara: Great. And what are your normal business hours?
+
+Tom: We're open Monday through Friday, 7 AM to 6 PM. And Saturdays 8 AM to 2 PM. We're closed Sundays. Mountain Time.
+
+Clara: Got it. And your office address?
+
+Tom: 4820 Northfield Boulevard, Denver, Colorado, 80216.
+
+Clara: Perfect. So when customers call after hours, what kinds of situations do you consider a true emergency?
+
+Tom: Okay so an emergency for us is — no heat when it's below 30 degrees outside, no AC when it's above 95, a furnace that's actively leaking carbon monoxide, and any commercial refrigeration failure because those customers can lose thousands of dollars of product overnight.
+
+Clara: That makes sense. And when there's an emergency after hours, how do you want us to route that call?
+
+Tom: So first we try the on-call technician. That's a rotating schedule — we update the number weekly. Right now it's Mike Salazar at 720-555-0143. If Mike doesn't answer in 90 seconds, try the secondary on-call, which is Dave Kowalski at 720-555-0187. If neither answer, the caller should be told someone will call them back within 15 minutes and the system should send me a text — I'm Tom at 720-555-0201.
+
+Clara: Understood. What about non-emergency after-hours calls?
+
+Tom: Those should just be told we're closed and given our hours. Ask them to call back or leave their name and number for us to call them the next business day. We do NOT want them transferred anywhere for non-emergencies.
+
+Clara: And during business hours, how do you want calls handled?
+
+Tom: We've got a receptionist, Janet, who handles scheduling and general inquiries. Transfer all calls during hours to our main office line, which is 720-555-0100. If that line is busy or no answer after 4 rings, send to voicemail — we check it constantly.
+
+Clara: Do you use any field service software we should know about?
+
+Tom: Yeah, we use ServiceTitan. The agent should never try to create jobs or touch ServiceTitan directly — that's Janet's job. Just collect info and route.
+
+Clara: Any other constraints or things the agent should never do?
+
+Tom: Don't quote prices. We get burned by that. And never promise same-day service — we can't always guarantee that.
+
+Clara: What should the agent say when it greets callers?
+
+Tom: Something like "Thank you for calling Arctic Comfort HVAC, how can I help you today?" — keep it friendly, professional. Don't say "press 1 for this, press 2 for that" — we hate that automated feel.
+
+Clara: Makes sense. Any seasonal considerations?
+
+Tom: Winter is crazy for us — November through February. We sometimes bring in two extra on-call techs. I'll update you guys on that when it changes.
+
+Clara: Perfect, Tom. I think we have everything we need to build your preliminary agent. We'll get that over to you in the next couple days for review.
+
+Tom: Sounds great. Looking forward to it.
+
+---
+END OF TRANSCRIPT

@@ -1,0 +1,61 @@
+DEMO CALL TRANSCRIPT
+Account ID: ACC-003
+Company: FireGuard Protection Services
+Date: 2024-11-18
+Duration: 31 minutes
+Participants: Sales Rep (Clara), Prospect (Steve Dolan, GM), Prospect (Pam Rios, Office Admin)
+
+---
+
+Clara: Hi Steve, hi Pam — thanks for joining together. Let's go through how Clara AI can help FireGuard. Steve, can you start with the business overview?
+
+Steve: Sure. FireGuard Protection Services. We're out of Phoenix, Arizona. We do fire sprinkler installation, inspection, and emergency repair for commercial properties — think warehouses, office buildings, restaurants. We also do fire alarm testing. 16 field techs, pretty busy operation.
+
+Clara: And your hours?
+
+Pam: We're open Monday through Friday, 7 AM to 5 PM, Arizona time — which is Mountain Standard year-round since we don't observe daylight saving.
+
+Clara: Great. Office address?
+
+Pam: 9240 West Roosevelt Street, Tolleson, Arizona, 85353.
+
+Clara: What's an emergency for FireGuard?
+
+Steve: Active sprinkler discharge — that's always an emergency, commercial property is flooding. Any fire alarm system that's gone fully offline. Any situation where an inspector has tagged a building as non-compliant and the deadline is imminent. Those three.
+
+Clara: After-hours emergency routing?
+
+Steve: Primary is our emergency dispatch line, 602-555-0177. That goes to a physical pager AND a cell — it's always answered within 90 seconds if staffed correctly. If nobody picks up in 2 minutes, escalate to our on-call supervisor, Rick Navarro, at 602-555-0144. If Rick doesn't answer either, tell the caller we are escalating and someone will call back in under 30 minutes. Log the call.
+
+Pam: And for sprinkler jobs specifically — Steve, tell her about ServiceTrade.
+
+Steve: Right. This is important. We use ServiceTrade for job management. Under no circumstances should the AI agent attempt to create, update, or close any jobs in ServiceTrade. That has to go through Pam or one of the office staff. If the AI touches ServiceTrade we'll have a big mess.
+
+Clara: Understood — that's a hard constraint we'll document clearly.
+
+Steve: Good. Also, any caller who mentions they are a "property manager" should be flagged as high priority — those accounts have SLAs.
+
+Clara: During business hours?
+
+Pam: Transfer to our main line, 623-555-0100. I'm usually the one answering. If I'm not there, we have Carlos who covers. If neither of us picks up in 3 rings, go to voicemail. We're good about checking.
+
+Clara: Non-emergency after-hours?
+
+Pam: Collect name, number, company name, and nature of the call. Read back to them that someone will contact them next business day. Don't promise anything beyond that.
+
+Clara: What greeting do you want?
+
+Steve: "Thank you for calling FireGuard Protection Services. For fire or sprinkler emergencies, stay on the line. For all other inquiries, how can we help you today?" We want to surface the emergency option immediately.
+
+Clara: Smart. Any other constraints?
+
+Pam: Don't discuss pricing. Don't mention competitor names. And never tell a caller that a system "should be fine" — we can't make that determination remotely.
+
+Steve: Also — permits. We get calls from general contractors asking about permit status. Just take their info and forward to Pam. Never comment on permit status.
+
+Clara: Got it. This is very helpful. Anything else before we wrap up?
+
+Pam: I think we're good. We're excited about this.
+
+---
+END OF TRANSCRIPT

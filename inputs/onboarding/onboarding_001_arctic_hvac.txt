@@ -1,0 +1,55 @@
+ONBOARDING CALL TRANSCRIPT
+Account ID: ACC-001
+Company: Arctic Comfort HVAC Solutions
+Date: 2024-12-03
+Duration: 18 minutes
+Participants: Onboarding Specialist (Clara), Client (Tom Hargrove, Owner), Client (Janet Summers, Receptionist)
+
+---
+
+Onboarding Specialist: Hi Tom, Janet — welcome to the onboarding call. We've already built your v1 agent based on the demo. Today we want to walk through it, confirm details, and capture any changes. Let's start — anything that needs updating right away?
+
+Tom: Yeah, a few things. First — Mike Salazar, our primary on-call guy, he left the company last week. So you need to remove him. Our new primary on-call is Chris Vega. His number is 720-555-0166.
+
+Onboarding Specialist: Got it. Chris Vega, 720-555-0166, new primary on-call. Dave Kowalski stays as secondary?
+
+Tom: Dave stays, yes.
+
+Onboarding Specialist: Good. What else?
+
+Janet: I wanted to add — we actually now also do water heater replacement. We didn't mention that in the demo. Can we add that to our services?
+
+Onboarding Specialist: Absolutely. So add "water heater replacement" to services supported. Noted. Anything else on services?
+
+Janet: We're also piloting commercial refrigeration maintenance this season — you can list that as "commercial refrigeration maintenance (pilot program)."
+
+Onboarding Specialist: Perfect. Tom, any routing changes?
+
+Tom: One thing — during business hours, if a caller specifically says they're an "existing maintenance contract customer," I want them transferred to Janet's direct line instead of the main office. Janet's direct is 720-555-0111.
+
+Onboarding Specialist: So an additional routing rule during business hours: if caller is an existing maintenance contract customer, transfer to 720-555-0111 (Janet direct). Otherwise standard transfer to 720-555-0100. Correct?
+
+Tom: Exactly.
+
+Onboarding Specialist: Got it. Any changes to emergency definitions or after-hours flow?
+
+Tom: One addition to emergencies — we had a situation last week where a commercial customer's boiler went down. I want "commercial boiler failure" added as an emergency trigger.
+
+Onboarding Specialist: Added. Any changes to what the agent should say in greeting or during calls?
+
+Janet: We'd like the agent to mention our website at the end of non-emergency after-hours calls. The website is www.arcticcomfortdenver.com. Something like "You can also visit us online at arcticcomfortdenver.com."
+
+Onboarding Specialist: Noted — add website mention at close of non-emergency after-hours calls. Any integration changes?
+
+Tom: No — still ServiceTitan, same constraint. Never touch it.
+
+Onboarding Specialist: Perfect. I think we have a clean set of changes. Let me read them back: new primary on-call is Chris Vega at 720-555-0166; added services water heater replacement and commercial refrigeration maintenance pilot; new business-hours routing for maintenance contract customers to Janet direct; commercial boiler failure added as emergency; website mentioned in after-hours non-emergency close. Does that cover it?
+
+Tom: That's it.
+
+Janet: Perfect, yes.
+
+Onboarding Specialist: Great. We'll push v2 within 48 hours.
+
+---
+END OF TRANSCRIPT

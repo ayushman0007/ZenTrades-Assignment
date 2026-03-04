@@ -1,0 +1,51 @@
+ONBOARDING CALL TRANSCRIPT
+Account ID: ACC-002
+Company: Riverstone Plumbing & Drain
+Date: 2024-12-05
+Duration: 15 minutes
+Participants: Onboarding Specialist (Clara), Client (Maria Chen, Operations Manager)
+
+---
+
+Onboarding Specialist: Hi Maria! We've got your v1 draft ready and I want to walk through some final confirmations and capture updates. What's changed since our demo call?
+
+Maria: A few things. Most importantly — we updated our business hours. We're now open Saturdays from 9 AM to 1 PM. So Monday through Friday 8 to 5, Saturdays 9 to 1, still Eastern Time.
+
+Onboarding Specialist: Updated. Monday–Friday 8–5, Saturday 9–1 ET. Any changes to emergency routing?
+
+Maria: The emergency on-call line changed. The number is now 678-555-0251. Same setup — single number, if no answer in 2 minutes, collect name, number, address, and alert Gary.
+
+Onboarding Specialist: Updated emergency line to 678-555-0251. Gary Tran's backup number at 678-555-0289 stays the same?
+
+Maria: Yes, Gary's the same.
+
+Onboarding Specialist: Any changes to what counts as an emergency?
+
+Maria: We want to add one — gas smell near a water heater. We do water heater installs and sometimes we get calls about gas smell. That's an emergency, and the agent should tell the caller to leave the building immediately and call their gas utility, then stay on the line.
+
+Onboarding Specialist: Good catch. So new emergency trigger: "gas smell near water heater or gas appliance." Agent instruction: advise caller to evacuate immediately and call gas utility, then proceed with tech routing. Correct?
+
+Maria: Exactly. Safety first, then us.
+
+Onboarding Specialist: Smart. Any changes to services or the greeting?
+
+Maria: Services — we're adding "tankless water heater installation" as a separate service, and "hydro jetting." Both are new offerings starting this quarter.
+
+Onboarding Specialist: Added: tankless water heater installation, hydro jetting.
+
+Maria: And can we update the greeting slightly? Instead of "plumbing experts" I want to say "your trusted Atlanta plumbing team" — less of a legal risk than "experts."
+
+Onboarding Specialist: Updated greeting: "Thank you for calling Riverstone Plumbing, your trusted Atlanta plumbing team. How can we help you today?"
+
+Maria: Perfect. One more — the Spanish language thing we discussed. Any update on that?
+
+Onboarding Specialist: Yes, the v1 draft includes a Spanish language flag. When Spanish is detected, agent says the phrase we agreed on and logs the call with note "Spanish-speaking caller — requires bilingual follow-up." We'll confirm that in v2.
+
+Maria: That's great. I think that's everything.
+
+Onboarding Specialist: Confirmed. Let me recap: hours updated to include Saturday 9-1; emergency line updated to 678-555-0251; gas smell added as emergency trigger with evacuation instruction; new services tankless water heater and hydro jetting; updated greeting. All good?
+
+Maria: All good!
+
+---
+END OF TRANSCRIPT
