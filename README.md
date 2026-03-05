@@ -3,10 +3,8 @@
 > *"Turning raw call transcripts into structured insights and AI agent configurations."*
 
 This project automates part of the onboarding workflow for service businesses such as HVAC, plumbing, and pest control. By providing a call transcript as input, the n8n workflows process the text and generate:
-
-A structured account memo
-
-A ready-to-use AI agent specification
+- A structured account memo
+- A ready-to-use AI agent specification
 
 The goal is to eliminate manual effort when analyzing onboarding calls and configuring AI agents.
 
@@ -66,7 +64,7 @@ Make sure you mount your `ZenTrades AI` folder as a volume so n8n can see it ins
 
 ```yaml
 volumes:
-  - "C:/Users/ARYAMAN/Downloads/ZenTrades AI:/data/zentrades"
+  - "C:/Users/AYUSHMAN/Downloads/ZenTrades AI:/data/zentrades"
 ```
 
 Inside n8n, your paths will then start with `/data/zentrades/inputs/...` and `/data/zentrades/outputs/...`
