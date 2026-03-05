@@ -1,16 +1,20 @@
 # 🤖 ZenTrades AI — Automated Call Processing Pipelines
 
-> *"So you've got 10 call transcripts, a Groq API key, and a dream. Let's build something."*
+> *"Turning raw call transcripts into structured insights and AI agent configurations."*
 
-This repo automates the boring part of onboarding trade businesses (HVAC, plumbing, pest control, and friends). Drop in a call transcript, and these n8n pipelines will spit out a structured account memo and a fully configured AI agent spec — no copy-pasting, no crying.
+This project automates part of the onboarding workflow for service businesses such as HVAC, plumbing, and pest control. By providing a call transcript as input, the n8n workflows process the text and generate:
 
-Built by **Aryaman** for the ZenTrades AI assignment. It works. Please don't touch the JavaScript nodes.
+A structured account memo
+
+A ready-to-use AI agent specification
+
+The goal is to eliminate manual effort when analyzing onboarding calls and configuring AI agents.
 
 ---
 
 ## 📂 Folder Structure
 
-Before you run anything, your folder layout needs to look *exactly* like this. The pipelines are picky. They will not ask nicely if a file is missing.
+Ensure that your folders follow the structure shown below before running the workflows.
 
 ```text
 ZenTrades AI/
@@ -37,9 +41,9 @@ ZenTrades AI/
 
 ---
 
-## 🏷️ File Naming — This Actually Matters
+## 🏷️ File Naming Conventions
 
-The JavaScript nodes parse filenames to figure out which account they're working with. Deviate from this format and things will break silently. You've been warned.
+The workflows extract important information directly from the filenames. Because of this, files must follow the expected naming format.
 
 | File Type | Format | Example |
 |---|---|---|
@@ -50,9 +54,9 @@ The JavaScript nodes parse filenames to figure out which account they're working
 
 ---
 
-## ⚙️ What You Need Before Starting
+## ⚙️ Requirements
 
-Two things. Just two.
+Before executing the workflows, make sure the following prerequisites are ready.
 
 **1. A running n8n instance**
 
@@ -81,7 +85,7 @@ That's it. No paid plans, no credit card, no tears.
 
 ---
 
-## 🚀 Running the Pipelines
+## 🚀 Workflow Execution
 
 There are two workflows. They do different things. Run them in order.
 
@@ -105,7 +109,7 @@ Think of it as: `raw transcript → structured memo → polished agent config`
 
 ---
 
-### Pipeline 2 — Batch Processing (The Fun One)
+### Pipeline 2 — Batch Processing
 
 **What it does:** Reads all 5 input files at once, fires 5 parallel requests to Groq, and writes all 5 output JSONs in one go. It's the same work as Pipeline 1, just done in bulk and significantly more satisfying to watch.
 
@@ -120,7 +124,7 @@ Think of it as: `raw transcript → structured memo → polished agent config`
 
 ---
 
-## 🗂️ What Gets Generated
+## 📊 Generated Output
 
 After both pipelines run successfully on all 10 files, your `outputs/` folder will contain:
 
@@ -130,7 +134,7 @@ After both pipelines run successfully on all 10 files, your `outputs/` folder wi
 
 ---
 
-## 🐛 Common Issues
+## 🐛 Troubleshooting
 
 **"File not found" errors**
 Check your volume mount in `docker-compose.yml`. The path inside the container (`/data/zentrades/`) must match exactly what's in the n8n file path nodes. One wrong slash ruins everything.
@@ -146,4 +150,4 @@ Groq occasionally wraps its response in markdown code fences (` ```json ... ``` 
 
 ---
 
-*Maintained by Aryaman · ZenTrades AI Assignment · Built with n8n + Groq + a concerning amount of coffee*
+*Maintained by Ayushman · ZenTrades AI Assignment · Built with n8n + Groq*
